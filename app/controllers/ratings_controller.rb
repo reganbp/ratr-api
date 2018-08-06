@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :set_rating, only: [:show, :update, :destroy]
+  before_action :set_rating, only: [:update, :destroy]
 
   # GET /ratings
   def index
@@ -39,13 +39,14 @@ class RatingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_rating
-      @rating = Rating.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def rating_params
-      params.require(:rating).permit(:name, :rating, :notes)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_rating
+    @rating = Rating.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def rating_params
+    params.require(:rating).permit(:name, :rating, :notes, :user_id)
+  end
 end
