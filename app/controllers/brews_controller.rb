@@ -39,13 +39,14 @@ class BrewsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_brew
-      @brew = Brew.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def brew_params
-      params.require(:brew).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_brew
+    @brew = Brew.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def brew_params
+    params.require(:brew).permit(:name, :brewery_id)
+  end
 end
