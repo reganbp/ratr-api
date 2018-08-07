@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180807142155) do
+ActiveRecord::Schema.define(version: 20180807170920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,7 @@ ActiveRecord::Schema.define(version: 20180807142155) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "brewery_id"
-    t.index ["brewery_id"], name: "index_brews_on_brewery_id"
+    t.string "brewery"
   end
 
   create_table "examples", force: :cascade do |t|
@@ -58,7 +57,6 @@ ActiveRecord::Schema.define(version: 20180807142155) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
-  add_foreign_key "brews", "breweries"
   add_foreign_key "examples", "users"
   add_foreign_key "ratings", "users"
 end
