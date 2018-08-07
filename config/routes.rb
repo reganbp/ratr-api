@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :brews
   resources :breweries
   resources :ratings
   # RESTful routes
