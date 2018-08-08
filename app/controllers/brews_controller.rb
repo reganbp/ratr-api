@@ -15,7 +15,9 @@ class BrewsController < ApplicationController
 
   # POST /brews
   def create
-    @brew = Brew.new(brew_params)
+    # @brew = Brew.new(brew_params)
+
+    @brew = Brew.find_or_create_by(brew_params)
 
     if @brew.save
       render json: @brew, status: :created, location: @brew
