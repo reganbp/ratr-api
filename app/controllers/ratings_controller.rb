@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RatingsController < OpenReadController
-  before_action :set_rating, only: [:update, :destroy]
+  before_action :set_rating, only: %i[update destroy]
 
   # GET /ratings
   def index
@@ -15,7 +17,9 @@ class RatingsController < OpenReadController
 
   # POST /ratings
   def create
-    @rating = Rating.new(rating_params)
+    # @rating = Rating.new(rating_params)
+
+    @rating = current_user.ratings.build(rating_params)
 
     if @rating.save
       render json: @rating, status: :created, location: @rating
@@ -42,7 +46,9 @@ class RatingsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_rating
-    @rating = Rating.find(params[:id])
+    # @rating = Rating.find(params[:id])
+
+    @rating = current_user.ratings.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
