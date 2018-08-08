@@ -25,18 +25,18 @@ class BrewsController < ApplicationController
   end
 
   # PATCH/PUT /brews/1
-  def update
-    if @brew.update(brew_params)
-      render json: @brew
-    else
-      render json: @brew.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @brew.update(brew_params)
+  #     render json: @brew
+  #   else
+  #     render json: @brew.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /brews/1
-  def destroy
-    @brew.destroy
-  end
+  # def destroy
+  #   @brew.destroy
+  # end
 
   private
 
