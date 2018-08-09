@@ -53,6 +53,6 @@ class RatingsController < OpenReadController
 
   # Only allow a trusted parameter "white list" through.
   def rating_params
-    params.require(:rating).permit(:name, :rating, :notes, :user_id)
+    params.require(:rating).permit(:name, :rating, :notes, :user_id, :brewery)
   end
 end
