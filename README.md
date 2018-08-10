@@ -1,5 +1,5 @@
 # WDI-025 Capstone - Full Stack Project Back End
----
+
 ### Planning
 
 I planned this project with the intention of connecting to a third party API to search through an established database for existing brews.  I created ERDs (see below) to help me visualize my database structure.  I decided to run the Back End in Ruby with postgres because I wanted a relational database.  I planned to work through this project in the following way
@@ -67,5 +67,6 @@ patch '/change-password' => 'users#changepw'
 ---
 Feel free to fork, clone, and `bundle install` dependencies to have your own copy
 
+<=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>
 
 Thanks to General Assembly and all their support!
