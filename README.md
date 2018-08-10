@@ -1,6 +1,7 @@
-WDI-025 Capstone - Full Stack Project Back End
+# WDI-025 Capstone - Full Stack Project Back End
+
 ---
-Planning
+### Planning
 
 I planned this project with the intention of connecting to a third party API to search through an established database for existing brews.  I created ERDs (see below) to help me visualize my database structure.  I decided to run the Back End in Ruby with postgres because I wanted a relational database.  I planned to work through this project in the following way
 
@@ -18,12 +19,12 @@ with the reach goals (see future fixes)
   as well
 
 ---
-Development
+### Development
 
 I started by generating a Rails app and then scaffolding a Ratings resource.  I added a one to many relationship with the user, as I wanted a user to own many ratings and each rating to be unique to a user.  I used Curl scripts to test all my routes endpoints.  I added protections in so only the current user could change a rating (in an Open Read Controller).  I then scaffolded a second resource of Brews, so users could add any brew they wanted to the database.  I added back end authentication to check if a brew was already created, so we wouldn't be adding duplicates to the resource.  I used some Front End magic to add info from the Brews resource to the Ratings resource with a rating added by the user.
 
 ---
-Future Fixes
+### Future Fixes
 
 - Integrate with a third party API or seed a Database so users will only have
   to search and rate
@@ -33,7 +34,7 @@ Future Fixes
 - Integrate with my own [API](https://github.com/reganbp/wort-api) to rate home brew recipes
 
 ---
-Technologies
+### Technologies
 
 - Ruby
 - Ruby on Rails
@@ -41,12 +42,28 @@ Technologies
 - postgreSQL
 
 ---
-Links
+### Routes
 
-[ERD](https://i.imgur.com/STuu56S.jpg)
-[Front End Repo](https://github.com/reganbp/ratr-client)
-[Front End Deployed](https://reganbp.github.io/ratr-client/)
-[Back End Deployed](https://floating-temple-84056.herokuapp.com/)
+```ruby
+# RESTful routes
+resources :users, only: %i[index show update]
+resources :ratings, except: %i[new edit]
+resources :brews, except: %i[new edit destroy update]
+
+# Custom routes
+post '/sign-up' => 'users#signup'
+post '/sign-in' => 'users#signin'
+delete '/sign-out' => 'users#signout'
+patch '/change-password' => 'users#changepw'
+```
+
+---
+### Links
+
+- [ERD](https://imgur.com/GGHJeKh)
+- [Front End Repo](https://github.com/reganbp/ratr-client)
+- [Front End Deployed](https://reganbp.github.io/ratr-client/)
+- [Back End Deployed](https://floating-temple-84056.herokuapp.com/)
 
 ---
 Feel free to fork, clone, and install dependencies (bundle install) to have your own copy
