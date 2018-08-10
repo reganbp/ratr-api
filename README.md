@@ -1,12 +1,8 @@
 WDI-025 Capstone - Full Stack Project Back End
 ---
-###Planning
+Planning
 
-I planned this project with the intention of connecting to a third party API to
-search through an established database for existing brews.  I created ERDs (see
-below) to help me visualize my database structure.  I decided to run the Back
-End in Ruby with postgres because I wanted a relational database.  I planned to
-work through this project in the following way
+I planned this project with the intention of connecting to a third party API to search through an established database for existing brews.  I created ERDs (see below) to help me visualize my database structure.  I decided to run the Back End in Ruby with postgres because I wanted a relational database.  I planned to work through this project in the following way
 
 - Generate Rails app
 - Scaffold Ratings resource
@@ -22,20 +18,12 @@ with the reach goals (see future fixes)
   as well
 
 ---
-###Development
+Development
 
-I started by generating a Rails app and then scaffolding a Ratings resource.  I
-added a one to many relationship with the user, as I wanted a user to own many
-ratings and each rating to be unique to a user.  I used Curl scripts to test all
-my routes endpoints.  I added protections in so only the current user could
-change a rating (in an Open Read Controller).  I then scaffolded a second resource
-of Brews, so users could add any brew they wanted to the database.  I added back
-end authentication to check if a brew was already created, so we wouldn't be
-adding duplicates to the resource.  I used some Front End magic to add info from
-the Brews resource to the Ratings resource with a rating added by the user.
+I started by generating a Rails app and then scaffolding a Ratings resource.  I added a one to many relationship with the user, as I wanted a user to own many ratings and each rating to be unique to a user.  I used Curl scripts to test all my routes endpoints.  I added protections in so only the current user could change a rating (in an Open Read Controller).  I then scaffolded a second resource of Brews, so users could add any brew they wanted to the database.  I added back end authentication to check if a brew was already created, so we wouldn't be adding duplicates to the resource.  I used some Front End magic to add info from the Brews resource to the Ratings resource with a rating added by the user.
 
 ---
-###Future Fixes
+Future Fixes
 
 - Integrate with a third party API or seed a Database so users will only have
   to search and rate
@@ -45,7 +33,7 @@ the Brews resource to the Ratings resource with a rating added by the user.
 - Integrate with my own [API](https://github.com/reganbp/wort-api) to rate home brew recipes
 
 ---
-###Technologies
+Technologies
 
 - Ruby
 - Ruby on Rails
@@ -53,18 +41,15 @@ the Brews resource to the Ratings resource with a rating added by the user.
 - postgreSQL
 
 ---
-###ERD
+Links
 
 [ERD](https://i.imgur.com/STuu56S.jpg)
+[Front End Repo](https://github.com/reganbp/ratr-client)
+[Front End Deployed](https://reganbp.github.io/ratr-client/)
+[Back End Deployed](https://floating-temple-84056.herokuapp.com/)
 
 ---
-###Front End Repo
-
-[Front End](https://github.com/reganbp/ratr-client)
-
----
-Feel free to fork, clone, and install dependencies to have your own copy
+Feel free to fork, clone, and install dependencies (bundle install) to have your own copy
 
 
-<=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>
 Thanks to General Assembly and all their support!
