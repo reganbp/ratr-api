@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RatingsController < OpenReadController
-  before_action :set_rating, only: %i[update destroy]
+  before_action :set_rating, only: %i[update destroy show]
 
   # GET /ratings
   def index
