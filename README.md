@@ -1,5 +1,4 @@
 # WDI-025 Capstone - Full Stack Project Back End
-
 ---
 ### Planning
 
@@ -66,7 +65,7 @@ patch '/change-password' => 'users#changepw'
 - [Back End Deployed](https://floating-temple-84056.herokuapp.com/)
 
 ---
-Feel free to fork, clone, and install dependencies (bundle install) to have your own copy
+Feel free to fork, clone, and `bundle install` dependencies to have your own copy
 
 
 Thanks to General Assembly and all their support!
